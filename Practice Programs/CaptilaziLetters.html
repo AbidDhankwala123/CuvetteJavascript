@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function capitalizeLetters(str)
+        {
+            // str = str.toLowerCase().split(" ");
+            // for(let i=0;i<str.length;i++)
+            // {
+            //     str[i] = str[i].substring(0,1).toUpperCase().concat(str[i].substring(1));
+            //     console.log(str[i]);
+            // }
+            // str = str.join(" ");
+            // console.log(str);
+
+
+            //Using map
+            return str
+                .toLowerCase()
+                .split(" ")
+                .map(function(word){
+                    return word[0].toUpperCase().concat(word.substring(1));
+                })
+                .join(" ");
+        }
+        // capitalizeLetters("I Love Java");
+        
+        console.log(capitalizeLetters("I Love Java"));
+    </script>
+</body>
+</html>

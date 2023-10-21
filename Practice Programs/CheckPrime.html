@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let count = 0;
+        function isPrime(num)
+        {
+            for(let i = 1;i<=num;i++)
+            {
+                if(num%i==0)
+                {
+                    count++;
+                }
+            }
+            // 1st way to return
+            // if(count == 2) 
+            // {
+            //     return true;
+            // }
+            // return false;
+            
+            //2nd way to return
+            return count == 2; //return true or false
+        }
+        console.log(isPrime(6));
+    </script>
+</body>
+</html>

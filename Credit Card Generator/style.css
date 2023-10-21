@@ -1,0 +1,245 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  :root{
+    --font-family-roboto: "Roboto",sans-serif;
+    --font-family-inter: "Inter",sans-serif;
+  
+  }
+  .form-container{
+    height: 100vh;
+    display: flex;
+}
+
+.img{
+    width: 30vw;
+}
+.rightside-part{
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card-expiry-dates{
+    display: flex;
+}
+section{
+    margin-bottom: 2rem;
+}
+section>label,div>label{
+    color: #404040;
+    font-family: var(--font-family-roboto);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1.86px;
+}
+section>input,div>input{
+    border-radius: 6px;
+    margin-top: 10px;
+    font-size: larger;
+    font-weight: 600;
+    outline: none;
+    letter-spacing: 1px;
+    border: 1px solid grey;
+}
+section>input::placeholder,div>input::placeholder{
+    color: #BBB9BC;
+    font-family: var(--font-family-inter);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    
+}
+section>input{
+    width: 23.9rem;
+    height: 2.5rem;
+    padding-left: 0.5rem;
+}
+.expiry-date{
+    margin-right: 1rem;
+}
+div>input{
+    padding-left: 10px;
+    width: 5.5rem;
+    height: 2.5rem;
+}
+#cvc{
+    width: 11rem;
+    height: 2.8rem;
+}
+.form{
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirm-btn{
+    cursor: pointer;
+    color: white;
+    border-radius: 6px;
+    background: #220930;
+    padding: 0.5rem 9rem;
+    font-family: var(--font-family-inter);
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.25px;
+}
+
+/* CardFront */
+.card-front{
+    position: absolute;
+    top: 3rem;
+    left: 4rem;
+    height: 15rem;
+    width: 27rem;
+    border-radius: 0.7rem;
+    background-image: url("MyImages/card-front.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.circle-1{
+    position: absolute;
+    left: 2rem;
+    top: 1.3rem;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    background-color: #FEFFFF;
+}
+.circle-2{
+    position: absolute;
+    left: 6rem;
+    top: 1.8rem;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+.display-card-number{
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 5rem;
+    width: 27rem;
+}
+.number,.month,.year{
+    border: none;
+    outline: none;
+    background: transparent;
+}
+.number,.number::placeholder{
+    color: #FFF;
+    font-family: var(--font-family-inter);
+    font-size: 1.7rem;
+    font-weight: 400;
+    letter-spacing: 5px;
+}
+.display-user-details{
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 2rem;
+    width: 27rem;
+}
+.month,.month::placeholder,.year,.year::placeholder{
+    color: #FFF;
+    font-family: var(--font-family-roboto);
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 3.29px;
+}
+.month{
+    /* text-align: center; */
+    text-transform: uppercase;
+    /* border: 3px solid red; */
+    width: 15rem;
+}
+
+/* CardBack */
+.card-back{
+    position: absolute;
+    bottom: 2rem;
+    left: 10rem; 
+    height: 15rem;
+    width: 27rem;
+    border-radius: 0.7rem;
+    background-image: linear-gradient(#FFFFFF, #D9D9D9);
+}
+.black-strip{
+    position: relative;
+    top: 1.5rem;
+    height: 3.1rem;
+    background-color: black;
+}
+.gray-strip{ 
+    position: relative;
+    top: 2.8rem;
+    left: 2rem;
+    height: 2.5rem;
+    width: 23rem;
+    border-radius: 8px;
+    background: #ADB6BF;
+    padding: 5px 10px;
+}
+.cvc{
+    border: none;
+    outline: none;
+    background: transparent;
+}
+.cvc,.cvc::placeholder{
+    padding: 0px;
+    margin-top: -2px;
+    width: 22rem;
+    text-align: right;
+    color: #FFF;
+    font-family: var(--font-family-roboto);
+    font-size: 1.6rem;
+    font-weight: 500;
+    letter-spacing: 3.5px;
+
+}
+.section-1,.section-2,.section-3{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+}
+.lines-container{
+    width: 20rem;
+    position: relative;
+    top: 4.5rem;
+    left: 4rem;
+}
+.lines{
+    height: 5px;
+    border-radius: 4px;
+    background: #AEB5BD;
+}
+.line1,.line12{
+    width: 7.1rem;
+}
+.line2,.line5,.line10,.line11{
+    width: 1.4rem;
+}
+.line3,.line4{
+    width: 1.2rem;
+}
+.line6{
+    width: 3.8rem;
+}
+.line7{
+    width: 2.9rem;
+}
+.line8,.line9{
+    width: 0.6rem;
+}
+.hidden{
+    display: none;
+}
+.show-header{
+    display: block;
+}

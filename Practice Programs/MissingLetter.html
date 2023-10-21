@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function missingLetter(str)
+        {
+            for (let i = 0; i < str.length; i++) {
+                if(str.charCodeAt(i+1) - str.charCodeAt(i) > 1) // charCodeAt() return ascii code
+                {
+                    let missingLetter = str.charCodeAt(i) + 1;
+                    return String.fromCharCode(missingLetter);// String.fromCharCode() convert ascii code into letter
+                }
+            }
+            return undefined; // if no letter is missing then return undefined
+        }
+        console.log(missingLetter("abce"));
+        console.log(missingLetter("abcdefghjklmno"));
+        console.log(missingLetter("abcdefghijklmnopqrstuvwxyz"));
+    </script>
+</body>
+</html>

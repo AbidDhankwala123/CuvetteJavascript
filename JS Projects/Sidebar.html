@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            display: none;
+            width: 400px;
+            height: 100vh;
+            padding: 20px 0;
+            background-color: darkgoldenrod;
+        }
+         .lists{
+            background-color: aqua;
+        }
+        .dappr-img{
+            margin:0px 10px 20px 10px;
+        }
+        .img img{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: dodgerblue;
+            cursor: pointer;
+            margin: 10px 10px;
+            height: 50px;
+            width: 50px;          
+        }
+        ul{
+            list-style-type: none;           
+        }
+        li{
+            color: darkblue;
+            border: 2px solid black;
+            font-size: x-large;
+            padding: 1.5rem 0;
+        }
+        li a{
+            text-decoration: none;
+        }
+        .close-img{
+            cursor: pointer;
+            position: absolute;
+            top: 2rem;
+            left: 20rem;
+            color: red;
+            font-size: 40px;
+            font-family: "Roboto",sans-serif;
+        }
+        .show-container{
+           display: block;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="dappr-img">
+            <img src="../../../CuvetteCSS/MyImages/dappr.png" alt="">
+        </div>
+
+        <div class="close-img">X</div>
+        
+        <div class="lists">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        
+    </div>
+
+    
+    <div class="img">
+        <img src="../../../CuvetteCSS/MyImages/Vector.png" alt="" class="hamburger-img">
+    </div>
+
+    
+
+    <script>
+        let container = document.querySelector(".container");
+        let toggleBtn = document.querySelector(".hamburger-img");
+        let closeBtn = document.querySelector(".close-img");
+        let lists= document.querySelector(".lists");
+
+        toggleBtn.addEventListener("click",() => {
+            container.classList.remove("hidden");
+            container.classList.toggle("show-container");
+        });
+
+        closeBtn.addEventListener("click",() => {
+            container.classList.toggle("hidden");            
+        });
+
+    </script>
+</body>
+</html>

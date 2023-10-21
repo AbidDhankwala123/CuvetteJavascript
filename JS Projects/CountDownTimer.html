@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Remaining days are : </h1>
+    <p id="para"></p>
+    <script>
+        // let countDownDate = new Date("Sept 28,2023");
+        let countDownDate = new Date("Sept 28,2023 04:30:30").getTime();
+        // let countDownDate = new Date("Sept 02,2023 04:30:30").getTime();
+
+        setInterval(toCalculateTime,1000);
+
+        function toCalculateTime() {
+            // let currentDate = new Date();
+            let currentDate = new Date().getTime();
+
+            let differenceTime = countDownDate - currentDate;//result in milliseconds
+
+            let days = Math.floor(differenceTime/(1000*3600*24));//first parameter is for second(convert millisecond to second), second parameter is for hours(convert second to hours),third parameter is for days(convert hours to days)
+            
+            let hours = Math.floor((differenceTime%(1000*3600*24))/(1000*3600));
+            let minutes = Math.floor((differenceTime%(1000*3600))/(1000*60));
+            let seconds = Math.floor((differenceTime%(1000*60))/(1000));
+            
+            let paragraph = document.querySelector("#para");
+            paragraph.innerHTML = `${days}days ${hours}hours ${minutes}minutes ${seconds}seconds`
+
+            if(differenceTime < 0)
+            {
+                paragraph.innerHTML = "Expired!!";
+            }
+        }
+        
+    </script>
+</body>
+</html>

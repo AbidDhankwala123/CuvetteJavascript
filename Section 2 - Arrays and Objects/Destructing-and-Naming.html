@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const firstName = "Abid";
+        const lastName = "Dhankwala";
+        const age = 23;
+        //Re-Naming or Naming
+        const person = {
+            firstName : firstName,
+            lastName : lastName,
+            age : age
+
+        }
+        const person2 = {
+            firstName,
+            lastName,
+            age
+
+        }
+
+        console.log(person);
+        console.log(person.age);
+        console.log(person2);
+        console.log(person2.lastName);
+
+        //Destructing
+        let todo = {
+            id : 1,
+            title : "Take out trash",
+            user : {
+                name : "John"
+            }
+        };
+        // let id = todo.id;
+        // console.log(id);
+
+        // let { id, title, user } = todo;//Destructing objects require curly braces {}
+        // console.log(id,title);
+        // console.log(user);
+        // let { id, title, user:{name} } = todo;
+        // console.log(name);
+
+        let { id: todoId, title, user:{name} } = todo;//renaming keys(renaming the variable from id to todoId)
+        console.log(todoId);
+
+        
+        //Destructing arrays
+
+        let numbers = [23,67,33,49];
+
+        let [first,second, ...rest] = numbers; //Destructing arrays require square brakets []
+
+        console.log(first,second);
+
+        //rest operator(...rest) -> is used to print the rest of the numbers in array,not only rest,whole array can be printed
+        //can change the name instead of rest,we can write nums or any other name
+
+        console.log(first,second,rest);
+
+
+
+
+    </script>
+</body>
+</html>

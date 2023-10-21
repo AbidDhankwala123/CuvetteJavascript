@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function longestWord(str) {
+            //Create filtered array
+            let wordArr = str.toLowerCase().match(/[a-z0-9]+/g);//to remove the comma, use regular expression
+
+            //Sort by length in descending order
+            let sorted = wordArr.sort((a,b) => b.length - a.length);
+
+            //If multiple words,put into array
+            let longestWordArr = sorted.filter(word => word.length == sorted[0].length);
+
+            return longestWordArr;
+        }
+        console.log(longestWord("Hello there, my name is Abid"));
+        // console.log(longestWord("Helloo there, my name is Abid"));
+    </script>
+</body>
+</html>

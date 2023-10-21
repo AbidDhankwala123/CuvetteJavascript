@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            background-image: url("../../../CuvetteHtml/MyImages/border.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        div{
+            /* text-align: center; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            width: 400px;
+            background-color: white;
+        }
+        button{
+            background-color: dodgerblue;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border: none;
+            border-radius: 1rem;
+        }
+        .close-img{
+            display: none;
+            cursor: pointer;
+            position: relative;
+            right: 3rem;
+            bottom: 4rem;
+            color: red;
+            font-size: 40px;
+            font-family: "Roboto",sans-serif;
+        }
+        .show{
+            display: block;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 id="heading">Modal Project</h1>
+        <button id="btn">OPEN MODAL</button>
+    </div>
+    <section class="close-img">X</section>
+    <script>
+        let button = document.querySelector("#btn");
+        let heading = document.querySelector("#heading");
+        let closeBtn = document.querySelector(".close-img");
+
+        button.addEventListener("click",() => {
+            document.body.style.backgroundColor = "lightblue";
+            closeBtn.classList.toggle("show");
+            button.classList.toggle("hidden");
+            heading.textContent = "Modal Content";
+
+        });
+        closeBtn.addEventListener("click",() => {
+            document.body.style.backgroundColor = "";//to remove the color
+            closeBtn.classList.toggle("show");
+            button.classList.toggle("hidden");
+            heading.textContent = "Modal Project";
+        });
+    </script>
+</body>
+</html>

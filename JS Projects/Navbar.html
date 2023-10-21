@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            display: flex;
+            justify-content: space-between;
+            background-color: darkgoldenrod;
+        }
+         .lists{
+            display: none;
+            width: 100%;
+            background-color: aqua;
+            
+        }
+        .dappr-img{
+            
+            margin: 10px 10px;
+        }
+        .img img{
+            cursor: pointer;
+            margin: 10px 10px;
+            height: 50px;
+            width: 50px;
+           
+        }
+        ul{
+            list-style-type: none;
+            
+        }
+        li{
+            color: darkblue;
+            border: 2px solid black;
+            font-size: x-large;
+            padding: 1.5rem 0;
+        }
+        li a{
+            text-decoration: none;
+        }
+        .show-lists{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="dappr-img">
+            <img src="../../../CuvetteCSS/MyImages/dappr.png" alt="">
+        </div>
+        
+        <div class="img">
+            <img src="../../../CuvetteCSS/MyImages/Vector.png" alt="" class="hamburger-img">
+        </div>
+    </div>
+    <div class="lists">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+    <script>
+        let toggleBtn = document.querySelector(".hamburger-img");
+        let lists= document.querySelector(".lists");
+
+        toggleBtn.addEventListener("click",() => {
+            lists.classList.toggle("show-lists");
+        });
+
+    </script>
+</body>
+</html>

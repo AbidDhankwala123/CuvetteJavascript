@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Solution 1
+        let resultArray = [];
+        function mergeTwoArrays(arr1,arr2)
+        {
+
+            loopArray(arr1);
+            loopArray(arr2);
+
+            return resultArray;
+        }
+        function loopArray(arr)
+        {
+            for (let ele of arr) {
+                resultArray.push(ele);
+            }
+        }
+        console.log(mergeTwoArrays([50,10,30,40,20],[90,70,60,100,80]));
+
+
+        //Solution 2
+        function mergeTwoArrays2(arr1,arr2)
+        {
+            let resultArray = arr1.concat(arr2);
+            return resultArray;
+        }
+        console.log(mergeTwoArrays2([50,10,30,40,20],[90,70,60,100,80]));
+    </script>
+</body>
+</html>

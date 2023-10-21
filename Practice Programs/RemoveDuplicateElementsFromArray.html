@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Solution 1
+        function removeDuplicates(arr)
+        {
+            let uniqueArray = [];
+
+            for (let i = 0; i < arr.length; i++) {
+                if(!uniqueArray.includes(arr[i]))
+                {
+                    uniqueArray.push(arr[i]);
+                }    
+            }
+            return uniqueArray;
+        }
+        console.log(removeDuplicates([1,1,2,3,4,4,5,6,7,7,8,8,9]));
+
+        //Solution 2
+        function removeDuplicates2(arr)
+        {
+            //new Set(arr) // we will get a set
+            //Array.from(new Set(arr))  //set will be converted to array using Array.from() 
+            return Array.from(new Set(arr));
+        }
+        console.log(removeDuplicates2([1,1,2,3,4,4,5,6,7,7,8,8,9]));
+    </script>
+</body>
+</html>

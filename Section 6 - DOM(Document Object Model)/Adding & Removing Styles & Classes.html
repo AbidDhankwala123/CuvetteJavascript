@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* div{
+            border: 3px solid blue;
+            text-align: right;
+            height: 50px;
+            width: 500px;
+            font-size: 40px;
+        } */
+        .card{
+            border: 3px solid black;
+            background-color: orangered;
+            padding: 10px;
+        }
+        .dark{
+            background-color: chartreuse;
+            color: white;
+            /* padding: 10px; */
+
+        }
+        .shadow{
+            background-color: violet;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Adding & Removing Styles & Classes</h1>
+
+    <p class="card">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure enim nesciunt id ex quia. Distinctio, alias excepturi fuga, quas modi assumenda in, ullam itaque voluptate officia ipsam consequatur dolore commodi.
+    </p>
+
+    <ul class="item-list items">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+    </ul>
+
+    <button>Run</button>
+    <!-- <div class="display-result">9+2</div> -->
+
+    <script>
+        let text = document.querySelector("p");
+        let itemList = document.querySelector(".item-list");
+        let items = itemList.querySelectorAll("li");
+
+        function run()
+        {
+            // console.log(1);
+
+            //className
+            console.log(itemList.className);
+            // text.className = "dark";//changing the class name
+            // text.className = "card dark";//better to have both the class names
+            //overrides the value like bg-color gets changed(overrides) //merged the properties of both the classes
+
+
+            //classList
+            console.log(itemList.classList);
+            itemList.classList.forEach(c => console.log(c));
+
+            // text.classList.add("shadow");//to add a class
+            // text.classList.remove("card");//to remove a class
+
+            // text.classList.toggle("shadow");
+            // text.classList.toggle("hidden");
+
+            text.classList.replace("card","shadow");
+
+            //Change style
+            itemList.style.lineHeight = 3;
+            
+
+            items.forEach((item,index) =>{
+                item.style.color = "red";
+
+                if(index == 2){
+                    item.style.color = "blue";
+                }
+            })
+
+        }
+
+        document.querySelector("button").onclick = run;
+        
+    </script>
+</body>
+</html>

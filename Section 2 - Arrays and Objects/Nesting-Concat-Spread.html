@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Nested Array(Array within Array)
+        const fruits = ["apple","banana","orange"];
+        const barries = ["strawberry","blueberry","rasberry"];
+
+        fruits.push(barries);
+
+        console.log(fruits);
+
+        console.log(fruits[3]);
+        console.log(fruits[3][1]);//first is for array index and second is for value of array
+
+        const allFruits = [fruits,barries];
+        console.log(allFruits);
+        console.log(allFruits[0][3][1]);//first is for array index and second is for array index within array and third is for value of array
+        console.log(allFruits[0][3][2]);
+        console.log(allFruits[1][1]);
+
+        //concat method
+        let cities = ["mumbai","pune","banagalore"];
+        let cities2 = ["hyderabad","chennai","noida"];
+
+        console.log(cities.concat(cities2));
+
+        //Other way to concat is Spread Operator(...)
+        let colors = ["violet","indigo","blue","green"];
+        let colors2 = ["yellow","orange","red"];
+        let x = [...colors, ...colors2];//spread operator should be taken in array
+        console.log(x);
+
+        //concat() and spread operator(...) both work same that is to merge the two arrays into single array
+
+        //Flatten Arrays
+        let arr = [1,2,[3,4],5,[6,7],8];
+        console.log(arr);
+        console.log(arr[2][1]);
+        console.log(arr[5]);
+        console.log(arr[4][0]);
+
+        //Using flat() method, array will be merged
+        console.log(arr.flat());
+        console.log(fruits.flat());
+        console.log(allFruits.flat());
+
+
+        //Static methods on Array Object
+        console.log(Array.isArray(fruits));//returns true or false value
+        console.log(Array.isArray("hiii"));
+
+
+        console.log(Array.from("xyzpqrabc"));
+        console.log(Array.from("1234567890"));
+
+
+        let a = 1;
+        let b = 2;
+        let c = 3;
+        console.log(Array.of(a,b,c));
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function registeredUser(user){
+            if(!user){
+                user = "Bot";
+            }
+            return `${user} is registered`;
+        } 
+        // console.log(registeredUser("Abid"));
+        console.log(registeredUser());
+
+        //Default parameters
+        function registeredUser2(user = "Bot"){
+            return `${user} is registered`;
+        }
+        console.log(registeredUser2());
+
+
+        //Rest parameters(Rest operator(...))
+        function print(...numbers)
+        {
+            return numbers;
+        }
+        console.log(print(1,2,3,4,5));
+
+        function sum(...numbers)
+        {
+            let sum=0;
+            // for(let i=0;i<numbers.length;i++)
+            // {
+            //     sum += numbers[i];
+            // }
+            for(let num of numbers){
+                sum += num;
+            }
+            return sum;
+        }
+        console.log(sum(1,2,3,4,5));
+
+        //Object as parameters(passed the object in parameter of function)
+        function logInUser(user){
+            return `The user ${user.name} with the id of ${user.id} is logged in`;
+        }
+        let user = {
+            id : 1,
+            name : "Abid"
+        };
+        console.log(logInUser(user));
+        console.log(logInUser(
+            {
+                id : 2,
+                name : "Sara"
+            }
+        ));
+        
+        //Arrays as parameters
+        function getRandom(arr)
+        {
+            let randomIndex = Math.floor(Math.random() * arr.length);
+
+            let item = arr[randomIndex];
+
+            console.log(item);
+        }
+        getRandom([1,2,3,4,5,6,7,8,9,10]);
+
+        //Another way using Rest operator(...)
+        function getRandom2(...arr)//rest operator will automatically convert the numbers into array so while calling, we don't need to mention square brackets[]
+        {
+            let randomIndex = Math.floor(Math.random() * arr.length);
+
+            let item = arr[randomIndex];
+
+            console.log(item);
+        }
+        getRandom2(1,2,3,4,5,6,7,8,9,10);
+
+    </script>
+</body>
+</html>

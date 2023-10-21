@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //var variable can be redeclared in global scope and its value also can be updated inside a block 
+        //and that value will get updated to global scope also
+        var b="abc";
+        var b=1;
+        {
+            var b="xyz"
+            console.log(b);
+        }
+        console.log(b);
+        
+    //let variable can't be redeclared in global scope and its value can be updated inside a block scope only,
+    //not in the global scope
+        let a=45;
+        // a=90;
+        {
+            let a=30;
+            console.log(a);
+        }
+        console.log(a);
+        
+        // const variable compulsory need to be initialised and not only declared.
+        // Even we can't change the value of const variable.
+        // The value of const variable will remain same throughout the program
+        const c=100;
+        console.log(c);
+        // c=90;
+        console.log(c);
+        
+        // ternary oeprator
+        let age=23;
+        let checkAge=(age>10)?"You can drive":"You can't drive";
+        console.log(checkAge);
+
+        /*
+        Statically tyed lang:
+        int a,float b, char c,boolean b,String s
+
+        dynamically typed lang:
+        var nn;
+        nn=124;//number
+        nn="India"//automatically converted to string
+        */
+        var companyName="Neosoft";
+        console.log(companyName);
+        console.log(typeof companyName);
+        companyName=565656565;
+        console.log(typeof companyName);
+        var myLocation;
+        myLocation="Rabale"
+        var myLocation="dadar";//allowed to redeclared var type variable
+        let contactNmuber=34343443434;
+        /*let contactNumber=676767676;*/ //not allowed to redeclared let type variable
+        const pie=3.14;
+        /*pie=6;*/ //can not reassign value to const variable
+        
+    </script>
+</body>
+</html>

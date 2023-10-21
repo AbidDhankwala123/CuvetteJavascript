@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function evenOddSums(arr)
+        {
+            let evenSum = 0;
+            let oddSum = 0;
+
+            for(let value of arr)
+            {
+                if(value%2 == 0)
+                {
+                    evenSum = evenSum + value;
+                }
+                else{
+                    oddSum = oddSum + value;
+                }
+            }
+            // return [evenSum,oddSum];
+            return Array.of(evenSum,oddSum);//Array.of use to convert into array but it requires variables. Refer Nesting-Conact-Spread.html in Section 2
+
+
+            // arr.forEach(value => {
+            //     if(value%2==0)
+            //     {
+            //         evenSum = evenSum + value;
+            //     }
+            //     else{
+            //         oddSum = oddSum + value;
+            //     }
+            // })
+            // return [evenSum,oddSum];
+
+
+            //Using ternary operator
+            // arr.forEach(value => value%2==0 ? evenSum = evenSum+value : oddSum = oddSum+value);
+            // return [evenSum,oddSum];
+
+            
+        }
+        console.log(evenOddSums([50,60,60,45,71]));
+
+
+        //Just for practice
+        let arr2 = [1,2,3,4,5];
+        let result = arr2.filter(value => value%2==0);
+        console.log(result,...result);//Converting an array into elements using spread operator(...)
+    </script>
+</body>
+</html>

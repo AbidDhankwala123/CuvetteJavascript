@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Solution 1
+        // function seekAndDestroy(arr){
+        //     let args  = Array.from(arguments);
+
+        //     function filterArr(arr) {
+        //         //Return true if not in index
+        //         return args.indexOf(arr) == -1;
+        //     }
+
+        //     return arr.filter(filterArr);
+        // }
+
+        //Solution 2 //this is better solution
+        function seekAndDestroy(arr,...rest)
+        {
+            return arr.filter(value => !rest.includes(value));
+        }
+        console.log(seekAndDestroy([2,3,4,6,6,"hello"],2,6,"hello"));
+        console.log(seekAndDestroy([2,3,4,6,6,"hello"],2,6));
+    </script>
+</body>
+</html>

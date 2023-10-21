@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Array literal
+        let numbers = [34,56,81,26,9,12];
+
+        //Array constructor(created with the new keyword that is Array object)
+        let fruits = new Array("apple","banana","orange");
+        //both are the same thing
+
+        console.log(numbers[0]);
+
+        console.log(numbers[0] + numbers[3]);
+
+        console.log(numbers.length);
+
+        console.log(fruits.length);
+
+        console.log(`my favourite fruit is an ${fruits[1]}`);
+
+        let mixed = [23,56,"grapes",true,null];
+        console.log(mixed);
+
+        fruits.length = 2;//if we manually specify the length then it displays the output according to its length only
+        console.log(fruits);
+
+        fruits[2] = "pineapple";//change the fruit from orange to pineapple by specifying the index
+        console.log(fruits);
+
+        fruits[3] = "strawberry";//added the fruit from last
+
+        console.log(fruits);
+
+        fruits[fruits.length] = "blueberry";//added the fruit from last
+        console.log(fruits);
+
+        fruits[fruits.length] = "peach";//added the fruit from last
+        console.log(fruits);
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

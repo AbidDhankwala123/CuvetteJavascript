@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- arrays are mutable -->
+    <script>
+        let cities = ["mumbai","pune","banagalore"];
+        console.log(cities);
+
+        cities.push("hyderabad");//added from last
+        console.log(cities);
+
+        cities.pop("hyderabad");//removed from last
+        console.log(cities);
+
+        cities.unshift("hyderabad");//added from first
+        console.log(cities);
+
+        cities.shift("hyderabad");//removed from first
+        console.log(cities);
+
+        cities.reverse();
+        console.log(cities);
+
+        
+        console.log(cities.includes("mumbai"));//returns true or false value
+        console.log(cities.includes("chennai"));
+
+        console.log(cities.indexOf("mumbai"));
+        //as the arrays are mutable so due to reverse function, original array got reversed and output is 2
+
+        console.log(cities.indexOf("chennai"));//if value is not present then return -1
+    
+        //slice function is similar to substring fuction of string and it does not change the original array
+        console.log(cities.slice(1));
+
+        cities.push("hyderabad");
+        cities.push("chennai");
+        cities.push("noida");
+        cities.push("ahmedabad");
+
+        console.log(cities);
+        console.log(cities.slice(2,5));
+
+        //splice function is used to add and remove the elements at specific index
+        console.log(cities.splice(2,4));//first parameter is for starting index and second parameter is for number of deleting the elements including the starting index element
+        console.log(cities);
+    
+        let fruits = ["apple","banana","grapes","orange","pineapple","watermelon","strawberry","papaya","chikoo","pear","blueberry","lichi"];
+        console.log(fruits);
+        console.log(fruits.splice(6,3));
+        console.log(fruits);
+
+        console.log(fruits.splice(6,0,"papaya","chikoo"));//first parameter is for inserting the element at index 6 and second is for not deleting any elements and added 2 fruits
+        console.log(fruits);
+
+        console.log(fruits.splice(9,1,"dates","kajukatli"));//first parameter is for starting index and second is for deleting only one element and added 2 items
+        console.log(fruits);
+        
+        let joined=cities.join();// "," is by default
+        console.log(joined);
+        joined=cities.join(" ");
+        console.log(joined);
+        joined=cities.join("AA");
+        console.log(joined);
+
+        let teamArray=['CSK','MI'];
+        console.log(teamArray.join(" vs "));
+        // console.log(cities.join(" vs "));
+    
+        let cityArr=['mumbai','pune','bangalore','hyderabad','chennai'];
+        cityArr.splice(1,2);
+        console.log(cityArr);
+        cityArr.splice(1,2,'aaa','bbb');
+        console.log(cityArr);
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>

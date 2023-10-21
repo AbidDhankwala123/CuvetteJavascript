@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Datatypes
+        //Primitive data types
+
+        //String
+        let name="Abid";
+        console.log(name,typeof name);
+
+        //Number
+        let age2=23;
+        let a1=35.5;
+        console.log(a1,typeof a1);
+
+        //Boolean
+        let hasKids=false;
+        console.log(hasKids,typeof hasKids);
+
+        //Null
+        let aptNumber=null;
+        console.log(aptNumber,typeof aptNumber);
+
+        //Undefined
+        let score;
+        console.log(score,typeof score);
+
+        const score2=undefined;
+        console.log(score2,typeof score2);
+
+        //BigInt
+        let n=12345678910n;
+        console.log(n,typeof n);
+
+        let n1=23n;
+        console.log(n1,typeof n1);
+
+        //Symbol
+        /*in js private keyword not there to set variables private. we can use symbol # */
+        let id=Symbol("id");
+        console.log(id,typeof id);
+
+
+        //Reference types
+        //Array but its type is Object
+        let numbers=[1,2,3,4,5];
+        console.log(numbers,typeof numbers);
+
+        //Object and its type is also Object
+        let person={
+            name:"abid",
+            age:23,
+            email:"abid@gmail.com"
+        };
+        console.log(person,typeof person);
+
+        //Function
+        //its type is Function
+        function output()
+        {
+            console.log("Hii");
+        }
+        console.log(output,typeof output);
+    </script>
+</body>
+</html>

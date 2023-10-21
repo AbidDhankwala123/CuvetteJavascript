@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--1. shift + right/left/down/up arrow -> used to select the text.(use this)
+        2. shift + alt + right/left arrow -> used to select the text faster.
+        3. shift + alt + up/down arrow -> used to copy the text up/down way.(use this)
+    4. ctrl + left/right arrow -> used to go at beginnning or end of the text faster.
+    5. alt + up/dowm arrow -> used to move the whole text anywhere(use this)
+(use this) 6. after selecting a text like log,use ctrl+D -> to select the other log text also 
+(use this) 7. ctrl+shift+L -> instead of selecting one by one text using ctrl+D,we can use ctrl+shift+L to select all texts simultaneously
+(use this) 8. alt + (mouse left)click -> first click at the beginning/anywhere of the text and 
+    then press alt+click at beginning/anywhere to select the same text and type anything
+-->
+    <script>
+        console.log(100);
+        console.log("Hii World");
+        console.log(1,"Hii",true,88.44);
+
+        const x=100
+        console.log(x);
+        console.warn("This is used for printing an warning statement");
+        console.error("This is used for printing an error statement");
+        
+        console.table({
+            name:"Abid Dhankwala",
+            age:23,
+            email:"abid@gmail.com"
+        });
+        
+        console.group("this is used for grouping the various console properties and ended by console.groupEnd");
+        console.log(x);
+
+        console.error("This is used for printing an error statement");
+        console.warn("This is used for printing an warning statement");
+        console.groupEnd();
+
+        const styles="padding:10px; font-weight:bolder; border:5px solid red; background-color:white; color:green";
+        console.log("%cHii world",styles);
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Values are stored on the stack
+        let name="John";
+        let age=30;
+
+        let newName=name;
+        newName="xyz";
+        console.log(name,newName);
+
+
+        //Reference values are stored on the heap
+        let person={
+            name:"abid",
+            age:23
+        };
+
+        let newPerson=person;
+        newPerson.name="pqr";
+        person.age=24;//person and newPerson both are pointing to same reference
+        console.log(person,newPerson);
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            //&& - will return first falsy value(if there are more than one falsy value) and if both values are true then will return the last value
+            let a = 10 && 20;
+            console.log(a);//bcoz both are true that's why, the last value is printed
+        
+            let b = 10 && 20 && 30;
+            console.log(b);
+
+            let c = 10 && 0 && 30;//0 is a falsy value
+            console.log(c);//here, only 0 is a falsy value that's why, 0 is displayed
+        
+            let d = 10 && "" && 0 && 30;//here, two falsy values are present,0 and ""
+            console.log(d);//here, two falsy values are present,0 and "", that's why, first falsy value "" (empty string) is displayed
+        
+            let posts = ["Post1", "Post2"];
+            // let posts = [];
+            posts.length > 0 && console.log(posts[0]);
+
+            
+            //|| - if both values are true then will return the first value and if either value is truthy then last value will displayed and if neither is truthy value then also last value will be displayed
+            let e = 10 || 20;
+            console.log(e);//here,both values are true that's why return the first value
+            
+            let f = 0 || 20;
+            console.log(f);//here,either value is truthy that's why, last value is displayed
+
+            let g = 0 || "" || null || undefined;//here,neither is truthy value that's why, last value will be displayed
+            console.log(g);
+
+
+            // ?? - Returns the right side operand, if the left side is null or undefined
+            let h = 10 ?? 20;
+            console.log(h);
+            h = null ?? 20;
+            console.log(h);
+            h = undefined ?? 20;
+            console.log(h);
+            h = 0 ?? 20;
+            console.log(h);//only searches for null or undefined in the left side, not for falsy value
+            h = "" ?? 20;
+            console.log(h);//only searches for null or undefined in the left side, not for falsy value
+        </script>
+    </body>
+    </html>
+</body>
+</html>

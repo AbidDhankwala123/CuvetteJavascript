@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isAnagram(str1,str2) {
+            str1 = str1.toLowerCase().split("").sort().join("").replace(/[^\w]/g,"");//reg exp to remove the unwanted characters like special symbols or spaces betweeen two words
+            str2 = str2.toLowerCase().split("").sort().join("").replace(/[^\w]/g,"");
+            console.log(str1);
+            console.log(str2);
+            return str1 == str2;
+        }
+
+        console.log(isAnagram("Dormitory","dirty room##"));
+        console.log(isAnagram("elbow","below"));
+        console.log(isAnagram("abid","DIBA"));
+    </script>
+</body>
+</html>

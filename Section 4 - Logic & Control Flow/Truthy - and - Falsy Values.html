@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let email = "test@test.com";
+        //a string anything with it is a truthy value
+        
+
+        if(email){
+            console.log("You passed in an email");
+        }//internally gets converted or coersed(type coersion) to boolean - truthy value
+        console.log(Boolean(email));
+
+
+        /*
+        Falsy values:
+        - false
+        - 0
+        - "" or '' (Empty string)
+        - null
+        - undefined
+        - NaN
+        */
+
+        // let x= false;
+        // let x= 0;
+        // let x = "";
+        // let x = undefined;
+        // let x = null;
+        let x =NaN;
+
+        if(x){
+            console.log("This is truthy");
+        }
+        else{
+            console.log("This is falsy");
+        }
+        console.log(Boolean(x));
+
+
+        /*
+        Truthy values:
+        - Everything else that is not falsy
+        - true
+        - "0" or '0' (0 in a string)
+        - " " or ' ' (space in a string)
+        - "false" or 'false' (false in a string)
+        - [] (empty array)
+        - {} (empty object)
+        - function () {} (empty function)
+        */
+
+        // let y =true;
+        // let y = "0";
+        // let y = " ";
+        // let y = "false";
+        // let y = [];
+        // let y = {};
+        let y = function() {};
+
+        if(y){
+            console.log("This is truthy");
+        }
+        else{
+            console.log("This is falsy");
+        }
+        console.log(Boolean(y));
+
+        //Truthy and falsy more examples
+        // let children = 2;
+        // let children = 1;
+        let children = 0;
+
+        // if(children)
+        if(!isNaN(children)){
+            console.log(`You have ${children} children`);
+        }
+        else{
+            console.log("Please enter number of children");
+        }
+
+        //Checking for empty array
+        // let posts = ["Post1","Post2"];
+        let posts = [];//bcoz empty array is a truthy value
+
+        // if(posts){}
+        //Solution is below for empty array
+        if(posts.length > 0){
+            console.log("List posts");
+        }
+        else{
+            console.log("No posts to list");
+        }
+
+        //Checking for empty object
+        // let user = {
+        //     name : "Abid"
+        // };
+        let user = {};//bcoz empty object is a truthy value
+
+        // if(user){}
+        //Solution is below for empty object
+        if(Object.keys(user).length > 0){
+            console.log("List users");
+        }//Object.keys() will give the result in array and length can be calculated of array
+        else{
+            console.log("No user");
+        }
+
+        //Loose Equality (==)
+        // console.log(false == 0);
+        // console.log('' == 0);
+        // console.log(null == undefined);
+        console.log(false === 0);
+        console.log('' === 0);
+        console.log(null === undefined);
+    </script>
+</body>
+</html>

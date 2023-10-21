@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numbers = [1,2,3,4,5,6,7,8,9,10];
+        
+        let sum = numbers.reduce(function(accumulator,currentValue){
+            return accumulator + currentValue;
+        },0);
+        console.log(sum);
+
+        let sum2 = numbers.reduce((acc,curr) => acc+curr,0);
+        console.log(sum2);
+
+        //Using a for loop
+        let sum3 = () => {
+            let acc = 0;
+            for(let curr of numbers){
+                acc = acc + curr;
+            }
+            return acc;
+        };
+
+        console.log(sum3());
+
+        let sum4 = 0;
+        numbers.forEach((element) =>{
+            sum4 =sum4 + element;
+        });
+        console.log(sum4);
+
+
+        let cart = [
+            {
+                id:1,
+                name:"Product 1",
+                price:130
+            },
+            {
+                id:2,
+                name:"Product 2",
+                price:150
+            },
+            {
+                id:3,
+                name:"Product 3",
+                price:175
+            }
+        ];
+
+
+        let totalPrice = cart.reduce((acc,product) => acc + product.price,0 );
+        console.log(totalPrice);
+    </script>
+    
+</body>
+</html>

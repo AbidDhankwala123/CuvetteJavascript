@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //Challenge 1
+        //Normal function
+        let celsius=0;
+        function getCelsius(number){
+            celsius = (number -32)*5/9;
+            return celsius;
+        }
+        console.log(getCelsius(16));
+
+        //Using Arrow Function
+        celsius = number => (number-32)*5/9;
+        console.log(celsius(35));
+        console.log(`The temperature is ${getCelsius(40)}\xB0C`);// \xB0 is for degree(°) symbol and C is for celsius
+
+
+        //Challenge 2
+        //Using Arrow Function
+        let minMax = (arr) => ({
+            min : Math.min(...arr),
+            max : Math.max(...arr)
+        });//for object,brackets are required before curly braces{}
+        console.log(minMax([1,2,3,4,5]));
+
+        //Using Normal Function
+        function minMax2(arr){
+
+            let min = Math.min(...arr);
+            let max = Math.max(...arr);
+            return{
+                min,
+                max
+            }//converting into an object
+        }
+        console.log(minMax2([1,2,3,4,5,6]));
+
+
+        //Challenge 3
+        (function(length,breadth){
+            // let length = 10;
+            // let breadth = 5;
+            let rectangle = length * breadth;
+            console.log(`The area of a rectange with a length of ${length} and a width of ${breadth} is ${rectangle}`);
+        })(15,5);
+
+        //using arrow function
+        ((length,breadth) => {
+            let rectangle = length * breadth;
+            console.log(`The area of a rectange with a length of ${length} and a width of ${breadth} is ${rectangle}`);
+        })(20,10);
+    </script>
+</body>
+</html>

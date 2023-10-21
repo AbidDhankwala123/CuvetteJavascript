@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Solution 1 : Find missing number from Array
+        // function missingNumber(arr)
+        // {
+        //     let num = arr.length + 1;
+
+        //     let actualSum = num * (num+1)/2;
+
+        //     let expectedSum = arr.reduce((curr,acc) => curr+acc,0);
+
+        //     let missingNumber = actualSum - expectedSum;
+
+        //     return missingNumber;
+        // }
+
+        //Solution 2 : Find missing number from elements not array
+        function missingNumber(arr)
+        {
+            let args = Array.from(arguments); //Refer SumOfNumbers.html
+
+            let num = args.length + 1;
+
+            let actualSum = num * (num+1)/2;
+
+            let expectedSum = args.reduce((curr,acc) => curr+acc,0);
+
+            let missingNumber = actualSum - expectedSum;
+
+            return missingNumber;
+        }
+        console.log(missingNumber(1,2,4,5));
+    </script>
+</body>
+</html>

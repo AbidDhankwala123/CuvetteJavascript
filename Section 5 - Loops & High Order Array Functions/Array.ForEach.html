@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let socials = ["Whatsapp", "LinkedIn", "Facebook", "Instagram"];
+        // console.log(socials);
+
+        socials.forEach( function(item){
+            console.log(item);
+        });
+
+        socials.forEach((item) => {
+            console.log(item);
+        });
+
+        socials.forEach( item => console.log(item));
+
+        socials.forEach((item,index,arr) => {
+            // console.log(item,index,arr);
+            console.log(`${item} ${index}`,arr);
+        });
+
+
+        function logSocials(social){
+            console.log(social);
+        }
+
+        socials.forEach(logSocials);
+
+
+        let socialObjs = [
+            {
+                name : "Whatsapp",
+                url : "https://whatsapp.com"
+            },
+            {
+                name : "LinkedIn",
+                url : "https://linkedIn.com"
+            },
+            {
+                name : "Facebook",
+                url : "https://facebook.com"
+            },
+            {
+                name : "Twitter",
+                url : "https://twitter.com"
+            }
+        ];
+        
+        socialObjs.forEach( item => console.log(item));
+        socialObjs.forEach( item => console.log(item.url));
+    </script>
+</body>
+</html>

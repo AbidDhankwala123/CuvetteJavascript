@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let library = [
+            {
+                title: "HTML",
+                author : "Abid",
+                status :{
+                    own : true,
+                    reading : false,
+                    read : false
+                }
+            },
+            {
+                title: "CSS",
+                author : "Shraddha",
+                status :{
+                    own : true,
+                    reading : false,
+                    read : false
+                }
+            },
+            {
+                title: "Javascript",
+                author : "Brad",
+                status :{
+                    own : true,
+                    reading : false,
+                    read : false
+                }
+            }
+        ];
+
+        library[0].status.read = true;
+        library[1].status.read = true;
+        library[2].status.read = true;
+
+        console.log(library);
+
+        let {title : firstBook} = library[0];//renaming the variable from title to firstName using naming property
+        console.log(firstBook);
+
+        let str = JSON.stringify(library);//convert object literal to JSON string
+        console.log(str);
+        console.log(library);
+    </script>
+</body>
+</html>

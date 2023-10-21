@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sortByHeight(arr)
+        {
+            let people = arr.filter(value => value != -1);//returns an array of values which is not equal to -1 
+            
+            // people.sort((a,b) => b-a); // sort in descending order
+            people.sort();//sort in ascending order
+            // console.log(people);
+
+            for(let i = 0;i<arr.length;i++)
+            {
+                if(arr[i] != -1)
+                {
+                    // arr[i] = people.pop(); // if people sort in descending order then use pop()
+                    arr[i] = people.shift(); // if people sort in ascending order then use shift()
+                }
+            }
+            return arr;
+        }
+        console.log(sortByHeight([-1,150,190,170,-1,-1,160,180]));// -1 are the trees which cannot move and remaining numbers should be arranged in ascending order 
+    </script>
+</body>
+</html>

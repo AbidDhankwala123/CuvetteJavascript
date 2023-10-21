@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Function Declaration(normal function)
+
+        console.log(addDollarSign(100));//Function hoisting
+
+        function addDollarSign(value)
+        {
+            return "$"+value;
+        }
+        console.log(addDollarSign(100));
+
+
+        // console.log(addPlusSign(200));//variable hoisting
+
+        //Function expression(anonymous function : no name)
+        let addPlusSign = function(value) {
+            return "+"+value;
+        };
+        console.log(addPlusSign(200)); 
+    </script>
+</body>
+</html>

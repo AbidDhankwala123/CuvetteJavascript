@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        Difference between for of and for in:
+       1. for of works with arrays and for in works with objects
+       2. for of directly returns the values and for in returns the keys not values
+       3. Below Eg. is, for in loop and Eg. of, for of loop is previous html file
+     -->
+    <script>
+        let colorObj = {
+            color1 : "violet",
+            color2 : "indigo",
+            color3 : "blue",
+            color4 : "green",
+            color5 : "yellow",
+            color6 : "orange",
+            color7 : "red"
+        };
+        
+        for(let key in colorObj)
+        {
+            console.log(key);
+        }//for in loop returns the keys
+
+        for(let key in colorObj)
+        {
+            console.log(key,colorObj[key]);
+        }//way to display the value
+
+        //For In Loop with Array
+        const colorArr = ["red","blue","green","yellow"];
+
+        for(let key in colorArr)
+        {
+            console.log(key);
+        }//for in loop returns the keys and here, key is array index
+
+        for(let key in colorArr)
+        {
+            console.log(key,colorArr[key]);
+        }//way to display the value. Eg:arr[i], same as colorArr[key]
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        if we have multiple lines of code in body the : arrow functions not preferred
+        if we have few lines of code : arrow function preferred
+        1. if arrow function have single statement in body then {} are optional
+            if there is only single return statement : return keyword not allowed, // result gets returned by default
+        2. if arrow function have single formal argumnt then () are optional -->
+    <script>
+        function add(a,b) {
+            return a+b;
+        }
+        console.log(add(2,3));
+
+        //Arrow function syntax//function keyword is not required and only arrow is added
+        let add2 = (a,b) => {
+            return a+b;
+        }
+        console.log(add2(3,4));
+
+        let subtract = (a,b) => a-b;//curly braces and return keyword is removed
+        //if there is only single return statement : return keyword not allowed, 
+        // result gets returned by default
+        console.log(subtract(7,5));
+
+        let multiply = a => a*5;//if we have only have single parameter then () are optional
+        console.log(multiply(5));
+
+        //Returning an object
+        let createObj = () => ({
+            name : "Abid"
+        })
+        console.log(createObj());
+
+        let numbers = [1,2,3,4,5];
+        numbers.forEach(function(item){
+            console.log(item);
+        });
+
+        //Arrow function in a callback
+        numbers.forEach(n => console.log(n)); 
+
+    </script>
+</body>
+</html>

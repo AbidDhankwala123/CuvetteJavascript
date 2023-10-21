@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const foo = 1;
+
+        //when we declare a var variable in global scope or inside any block like conditions block or loops ,
+        //that var variable will be window object but the var variable which is declared inside a function 
+        //will not be visible inside a window object because var variable is a function scope
+        //but let and const does not add in window object
+        var bar = 2;
+
+        if(true)
+        {
+            const a = 500;
+            let b = 600;
+            var c = 700;
+        }
+        // console.log(a);//error
+        // console.log(b);//error
+        //difference between var and let,const
+        console.log(c);// var is not a block scope
+//that means we can access a var variable outside of a block
+        for(var i = 0; i <= 10; i++)
+        {
+            console.log(i);
+        }
+        console.log(i);// var is not a block scope
+
+        function run() {
+            var d = 100;
+            console.log(d);
+        }
+        run();
+
+        //console.log(d);//error because var is a function scope 
+        //that means we cannot access a var variable outside of a function
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let myString="developer";
+        //capitalize the first letter of the word using string methods
+        //Solution 1:
+        let myNewString=myString.charAt(0).toUpperCase() + myString.substring(1);
+        console.log(myNewString);
+
+        //Solution 2:
+        let myNewString2=myString[0].toUpperCase() + myString.substring(1);
+        console.log(myNewString2);
+
+        //Solution 3:
+        let myNewString3=`${myString[0].toUpperCase()}${myString.substring(1)}`;
+        console.log(myNewString3);
+
+        //Solution 4:
+        let myNewString4=`${myString[0].toUpperCase()}${myString.slice(1)}`;
+        console.log(myNewString4);
+
+        //Solution 5:
+        let myNewString5=myString[0].toUpperCase().concat(myString.substring(1));
+        console.log(myNewString5);
+
+        let myNewString6;
+        //Solution 6:
+        for(let i=0;i<myString.length;i++)
+        {
+            myNewString6 = myString.charAt(i).toUpperCase().concat(myNewString.substring(1));
+            if(i==0)
+            {
+                break;
+            }
+        }
+        console.log("Using for loop : "+myNewString6);
+    </script>
+</body>
+</html>

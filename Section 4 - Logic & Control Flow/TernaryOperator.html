@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let age = 23;
+
+        //Using an if statement
+        if(age >= 18){
+            console.log("You can vote");
+        }
+        else{
+            console.log("You cannot vote");
+        }
+
+        //Using ternary operator
+        age >= 18 ? console.log("You can vote") : console.log("You cannot vote");
+
+        //Assigning a conditional value to a variable
+        let displayAge = age >= 18 ? true : false;
+        let displayAge2 = age >= 18 ? "You can vote" : "You cannot vote";
+        console.log(displayAge);
+        console.log(displayAge2);
+
+
+        //Multiple Statements
+        //Using an if statement
+        /*
+        let auth = true;
+        // let auth = false;
+        let redirect;
+
+        if(auth)
+        {
+            alert("Welcome to the dashboard");
+            redirect = "/dashboard";
+        }
+        else{
+            alert("Access denied");
+            redirect = "/login";
+        }
+        console.log(redirect);
+        */
+
+
+        //Using a ternary operator
+        // let auth = true;
+        /*
+        let auth=false;
+        let redirect2 = auth ? ( alert("Welcome to the dashboard"),"/dashboard") : ( alert("Access denied"),"/login");
+        console.log(redirect2);
+        */
+
+
+        //if we don't want to write the else statement in ternary operator
+        let auth =true;
+        // let auth = false;
+        auth ? console.log("Welcome to the dashboard") : null;
+        auth && console.log("Welcome to the dashboard");
+
+
+    </script>
+</body>
+</html>

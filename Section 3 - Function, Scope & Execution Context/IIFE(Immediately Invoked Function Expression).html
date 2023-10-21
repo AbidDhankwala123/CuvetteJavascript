@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let user="John";
+        console.log(user);
+    </script>
+    <script>
+        (function(){
+            let user="Abid";
+            console.log(user);
+            let hello = () => console.log("Hii, from the IIFE");
+            hello();
+        })();
+
+        (function(name) {
+            console.log(`Hii ${name}`);
+        })("Abid");
+
+        
+
+    </script>
+</body>
+</html>

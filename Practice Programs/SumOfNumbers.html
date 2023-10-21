@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //sum of all numbers without creating array
+        //Solution 1
+        function addAll2(){
+            // console.log(arguments);
+            let args = Array.from(arguments);//converting arguments into array
+            // console.log(args);
+            let sum = 0;
+            for (let ele of args) {
+                sum = sum + ele;
+            }
+            return sum;
+        }
+        console.log(addAll2(1,2,3,4,5,6,7,8,9,10));
+
+
+        /*
+        Spread operator works on array and convert the array into elements and takes the one by one element from array
+        Rest operator works on elements and convert the element into array and it also take the one by one element
+        */
+
+
+        //Solution 2
+        function addAll(...arr)//taking element one by one by rest operator
+        {
+            // console.log(arr,...arr);
+            
+            //Using reduce
+            // let sum = arr.reduce((current,accelerator) => current+accelerator,0);
+            // return sum;
+
+            //Using forEach
+            let sum = 0;
+            arr.forEach(value => sum = sum + value);
+            return sum;
+
+        }
+        console.log(addAll(2,5,6,7));
+    </script>
+</body>
+</html>

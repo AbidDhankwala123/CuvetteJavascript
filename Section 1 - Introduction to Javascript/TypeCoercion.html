@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let x = 5;
+        x = 5 + "5";//55
+        x = 5 + 5 + "5";//105 -> if we use the + operator before quotes then it will do addition between two numbers same as java
+        x = "5" + 5;//55
+        x = "5" + 5 + 10;//5510 -> if we use the + operator after quotes then it will do concatenation same as java
+        
+        x = 5 + Number("5");//10
+        console.log(x, typeof x);
+
+        x = 5 * "5";//type coercion//25
+        //implicitly convert the string to number
+        console.log(x, typeof x);
+
+        x = 10 - "10";//type coercion//0
+        //implicitly convert the string to number
+        console.log(x, typeof x);
+
+        x = 10 + "10";//1010
+        console.log(x, typeof x);
+
+        x = "abid" + 10;//type coercion//abid10
+        //implicitly convert the number to string
+        console.log(x, typeof x);
+
+        x = "abid" - 10;//type coercion//abid10
+        //implicitly convert the string to number
+        console.log(x, typeof x);
+
+
+        x = Number(null);//0
+        console.log(x, typeof x);
+        x = 5 * null;//implicitly convert the null to number and null is 0
+        console.log(x, typeof x);
+
+        x = Number(true);//1
+        console.log(x, typeof x);
+        x = Number(false);//0
+        console.log(x, typeof x);
+
+        x = 5 * true;//implicitly convert the true to number and true is 1
+        console.log(x, typeof x);
+        x = 5 * false;//implicitly convert the false to number and false is 0
+        console.log(x, typeof x);
+
+        x=Number(undefined);//NaN
+        console.log(x, typeof x);
+
+        x = 5 * undefined;
+        //any operation will be performed with undefined, result will be NaN
+        console.log(x, typeof x);
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let x = 100;
+        console.log(`${x} in global`);
+
+        function run(){
+            console.log(window.innerHeight);
+            console.log(`${x} in function`);
+            // console.log(y);
+        }
+        run();
+
+        if(true)
+        {
+            console.log(`${x} in block`);
+        }
+
+        function add()
+        {
+            let y = 50;
+            console.log(x + y);
+        }
+        add();
+
+        function add2()
+        {
+            let x = 1;
+            let y = 50;
+            console.log(x + y);
+        }
+        add2();
+        // console.log(y);
+    </script>
+</body>
+</html>

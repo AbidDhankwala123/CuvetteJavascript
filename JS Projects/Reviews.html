@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .underline{
+            height: 5px;
+            width: 100px;
+            background-color: dodgerblue;
+            margin-bottom: 20px;
+        }
+        
+        img{
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+        }
+        
+        #job{
+            color: dodgerblue;
+        }
+        article{
+            height: 700px;
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            box-shadow: 0 0 10px black;
+        }
+        #info{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- title -->
+    <div class="title">
+        <h2>Our Reviews</h2>
+        <div class="underline"></div>
+    </div>
+    <!-- review -->
+    <article class="review">
+        <div class="img-container">
+            <img src="../../../CuvetteHtml/MyImages/star.jpg" id="star-img" alt="">
+        </div>
+        <h4 id="author">Star Image</h4>
+        <p id="job">UX DESIGNER</p>
+        <p id="info">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, doloribus hic? Nostrum ipsam magni debitis deleniti non nihil, nisi odio!
+        </p>
+
+        <div class="button-container" style="margin-bottom: 20px;">
+            <button class="prev-btn">&lt;</button>
+            <button class="next-btn">&gt;</button>
+        </div>
+
+        <button class="random-btn">Surprise Me</button>
+    </article>
+
+
+    <script>
+        let reviews = [
+            {
+                id:1,
+                name: "Color Image",
+                job:"sql developer",
+                img:"../../../CuvetteHtml/MyImages/color.jpg",
+                text : "Lorem ipsum dolor sit amet consectetur adipisicing elit. At odio quo perspiciatis reiciendis nemo eos dolore neque laudantium labore quas."
+            },
+            {
+                id:2,
+                name: "Rose Image",
+                job:"web developer",
+                img:"../../../CuvetteHtml/MyImages/rose.jfif",
+                text : "Lorem ipsum dolor sit amet consectetur adipisicing elit. At odio quo perspiciatis reiciendis nemo eos dolore neque laudantium labore quas."
+            },
+            {
+                id:3,
+                name: "Star Image",
+                job:"python developer",
+                img:"../../../CuvetteHtml/MyImages/star.jpg",
+                text : "Lorem ipsum dolor sit amet consectetur adipisicing elit. At odio quo perspiciatis reiciendis nemo eos dolore neque laudantium labore quas."
+            },
+            {
+                id:4,
+                name: "Border Image",
+                job:"java developer",
+                img:"../../../CuvetteHtml/MyImages/border.png",
+                text : "Lorem ipsum dolor sit amet consectetur adipisicing elit. At odio quo perspiciatis reiciendis nemo eos dolore neque laudantium labore quas."
+            },
+        ];
+    
+        let img = document.querySelector("#star-img");
+        let author = document.querySelector("#author");
+        let job = document.querySelector("#job");
+        let info = document.querySelector("#info");
+
+        let prevBtn = document.querySelector(".prev-btn");
+        let nextBtn = document.querySelector(".next-btn");
+        let randomBtn = document.querySelector(".random-btn");
+
+
+        let currentItem = 0;
+
+        function getPersonInfo(){
+            let item = reviews[currentItem];
+            img.src = item.img;
+            author.textContent = item.name;
+            job.textContent = item.job;
+            info.textContent = item.text;
+        }
+
+        //when document gets loaded, first person content will be shown
+        window.addEventListener("DOMContentLoaded",function() {
+            getPersonInfo();
+        });
+    
+        nextBtn.addEventListener("click",function() {
+            currentItem++;
+
+            if(currentItem > reviews.length - 1)
+            {
+                currentItem = 0;
+            }
+            getPersonInfo();
+        });
+
+        prevBtn.addEventListener("click",function() {
+            currentItem--;
+
+            if(currentItem < 0)
+            {
+                currentItem = reviews.length-1;
+            }
+            getPersonInfo();
+        });
+
+        randomBtn.addEventListener("click",function() {
+            currentItem = Math.floor(Math.random() * reviews.length);
+            getPersonInfo();
+        });
+    
+    
+    
+    
+    
+    </script>
+
+</body>
+</html>

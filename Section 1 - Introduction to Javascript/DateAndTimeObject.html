@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let d;
+
+        d = new Date();/*object created with new keyword Date object*/
+
+        console.log(d,typeof d);
+
+        console.log(d.toString(),typeof d);
+
+        d = new Date(2000,4,16);//month number start from 0 that is 0 to 11
+        console.log(d);
+
+        d = new Date(2000,3,16);
+        console.log(d);
+
+//first parameter for year,second for month,third for date,fourth for hours,fifth for minutes,sixth for seconds
+        d = new Date(2000,3,16,12,30,0);
+        console.log(d);
+
+        d = new Date("2000-04-16");//in string format,month number displays properly that from 1 to 12
+        console.log(d);
+
+        d = new Date("2000-04-16T12:30:45");
+        console.log(d);
+
+        d = new Date('04/16/2000 11:00:00');
+        console.log(d);
+
+        d = new Date('2000-04-16');
+        console.log(d);
+
+        d = new Date('04-16-2000');
+        console.log(d);
+
+        d = Date.now();//display the timestamp in milliseconds
+        console.log(d);
+
+        d = new Date('04-16-2000 11:00:00');
+        d=d.getTime();
+        d=d.valueOf();
+        console.log(d);
+
+        d = new Date();//current time stamp
+        d=d.getTime();
+        d=d.valueOf();
+        console.log(d);
+
+        d = new Date(1692618852836);
+        console.log(d);        
+
+        d = Math.floor(Date.now() / 1000);//display the timestamp in seconds
+        console.log(d);
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

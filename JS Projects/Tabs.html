@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title{
+            display: grid;
+            place-items: center;
+        }
+        .about-center{
+            display: flex;
+            justify-content: center;
+        }
+        .tab-btn{
+            cursor: pointer;
+            padding: 0.5rem 0.5rem;
+            color: black;
+            margin-left: 10px;
+            background-color: gray;
+        }
+        .tab-btn.active{
+            background-color: #fff;
+        }
+        .content{
+            display: none;
+            padding-left: 10px;
+        }
+        .hcontent,.vcontent,.gcontent{
+            /* border: 3px solid red; */
+            text-align: justify;
+            height: 150px;
+            width: 400px;
+        }
+        .content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="title">
+            <h2>About</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, recusandae!</p>
+        </div>
+        <div class="about-center section-center">
+            <article class="about-img">
+                <img src="../../../CuvetteHtml/MyImages/star.jpg" alt="">
+            </article>
+
+            <div class="about-parent-container">
+                <article class="about">
+                    <div class="btn-container">
+                        <button class="tab-btn active" data-id="history">History</button>
+                        <button class="tab-btn" data-id="vision">Vision</button>
+                        <button class="tab-btn" data-id="goals">Goals</button>
+                    </div>
+                </article>
+    
+                <article class="about-content">
+                    
+                    <div class="content active" id="history">
+                        <h4>History</h4>
+                        <p class="hcontent">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque impedit error eaque dignissimos at suscipit fugiat, voluptates molestiae corporis ratione nihil voluptatem laborum mollitia explicabo ipsum praesentium cupiditate similique, quaerat illum labore ab sit? Nobis, distinctio reiciendis rem facere possimus veniam, adipisci, assumenda nam sed quaerat culpa veritatis quae doloremque.
+                        </p>
+                    </div>
+                    
+    
+                    <div class="content" id="vision">
+                        <h4>Vision</h4>
+                        <p class="vcontent">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque impedit error eaque dignissimos at suscipit fugiat, voluptates molestiae corporis ratione nihil voluptatem laborum mollitia explicabo ipsum praesentium cupiditate similique, quaerat illum labore ab sit? Nobis, distinctio reiciendis rem facere possimus veniam, adipisci, assumenda nam sed quaerat culpa veritatis quae doloremque.
+                        </p>
+                        <ul>
+                            <li>list item</li>
+                            <li>list item</li>
+                            <li>list item</li>
+                        </ul>
+                    </div>
+    
+                    <div class="content" id="goals">
+                        <h4>Goals</h4>
+                        <p class="gcontent">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque impedit error eaque dignissimos at suscipit fugiat, voluptates molestiae corporis ratione nihil voluptatem laborum mollitia explicabo ipsum praesentium cupiditate similique, quaerat illum labore ab sit? Nobis, distinctio reiciendis rem facere possimus veniam, adipisci, assumenda nam sed quaerat culpa veritatis quae doloremque.
+                        </p>
+                    </div>
+                </article>
+            </div>
+            
+        </div>
+    </section>
+
+
+    <script>
+        let btns = document.querySelectorAll(".tab-btn");
+        let about = document.querySelector(".about");
+        let articles = document.querySelectorAll(".content");
+
+        about.addEventListener("click",(e) => {
+            let id = e.target.dataset.id;
+            if(id){
+                btns.forEach((btn) => {
+                    btn.classList.remove("active");
+                    e.target.classList.add("active");
+                });
+
+                articles.forEach((article) => {
+                    article.classList.remove("active");
+                });
+                let element = document.getElementById(id);
+                element.classList.add("active");
+            }
+        });
+    </script>
+</body>
+</html>

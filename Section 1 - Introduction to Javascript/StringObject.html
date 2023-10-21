@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*String API: length, charAt, indexOf , lastIndexOf, concat, startWith, endsWith, slice, substring,
+        toUpperCase, toLowerCase,include,search,split,padStart,padEnd,charCodeAt,match,replace*/
+        let x;
+
+        const name="Abid";
+        const age=23;
+
+        console.log("Hello, my name is "+name+" and I am "+age+" years old");
+    
+        //Template Literals or Template Strings
+        console.log(`Hello, my name is ${name} and I am ${age} years old`);
+    
+        //String Properties and Methods
+        const s="Hello World";/*direct initialization : string literal*/
+        console.log(s);
+
+        var s1=new String("Welcome to JP Morgan");/*object created with new keyword String object*/
+        //string object are immutable
+        console.log(s1,typeof s1);//same as s.__proto__
+
+        console.log(s.length);
+
+        console.log(s[0]);//access value by key
+        console.log(s[3]);//similar to charAt() function
+
+        console.log(s.__proto__);//shows all methods & properties present in string object
+        
+        console.log(s.toUpperCase());
+        console.log(s.toLowerCase());
+
+        console.log(s.charAt(8));//same as s[3]
+
+        console.log(s.indexOf("d"));//give the index of character
+        console.log(s1.indexOf("c"));
+        console.log(s1.indexOf("organ"));
+        console.log(s1.indexOf("an"));
+
+        console.log(s.substring(7));
+        console.log(s.substring(4,9));
+
+        console.log(s.slice(-11,-1));//negative numbers will start from the end and starting index is -1 not 0
+    
+        let cName="Neosoft Technologies Limited Limit";
+        console.log(cName.slice(-8,-2));
+        console.log(cName.slice(-8,-15));//startingIndex>endingIndex
+        console.log(cName.slice(-12,13));//i,o
+        console.log(cName.slice(-20,24));//l,mi
+
+        let companyName="      JP Morgan        ";
+        console.log(companyName.trim());
+
+        
+        console.log(s.replace("World","John"));
+
+        console.log(cName.includes("soft"));//returns true or false
+        console.log(cName.includes("abc"));
+
+        console.log(s.valueOf());
+        console.log(s1.valueOf());
+        console.log(cName.valueOf());
+        console.log(companyName.valueOf());
+        
+        let strArray =cName.split(" ");
+        console.log(strArray);
+        console.log(cName.split(" "));//creates an array same as java split function
+        console.log(cName.split(""));
+
+
+        console.log(cName.lastIndexOf("i"));
+        console.log(cName.lastIndexOf("o"));
+
+        console.log(s1.concat(", Andheri, Abid"));
+
+
+        console.log(companyName.startsWith("JP"));//returns true or false
+        console.log(cName.startsWith("N"));
+        console.log(s.startsWith("Hello"));
+
+        console.log(s.endsWith("World"));
+
+        let str='My name is Abid is dhankwala';
+        console.log(str.search('is'));// return position
+        console.log(str.search('ABid'));
+        
+        console.log(str.match("hank"));
+        console.log(str.match("id"));
+        
+        console.log(str.charCodeAt(0));//returns ASCII value
+        
+        console.log(str.charCodeAt(4));
+        console.log(str.charCodeAt(11));
+        
+
+        let str2='India'
+        //first parameter is to mention the total characters to be in the string,
+        //So, in str2, there are 5 characters, so remaining characters will be filled by second parameter
+        //either in start or end
+        console.log(str2.padStart(8,'*'));
+        console.log(str2.padEnd(10,'$'));
+        console.log(str2.padEnd(16,'ismycountry'));
+
+        let newCompanyName="Amazon";
+        console.log(newCompanyName.padStart(7,"*"));
+        console.log(newCompanyName.padEnd(8,"*"));//strings are immutable
+    
+        
+    </script>
+</body>
+</html>

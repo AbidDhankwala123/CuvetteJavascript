@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function letterChanges(str)
+        {
+            let newStr = str.toLowerCase().replace(/[a-z]/gi, char => {
+                if(char == "z" || char == "Z")
+                {
+                    return "a";
+                }
+                else{
+                    return String.fromCharCode(char.charCodeAt() + 1);
+                }
+            });
+
+            newStr = newStr.replace(/a|e|i|o|u/gi, vowel => vowel.toUpperCase());
+
+            return newStr;
+        }
+        console.log(letterChanges("Hello Therez"));
+        console.log(letterChanges("Abid"));
+    </script>
+</body>
+</html>

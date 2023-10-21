@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //object literal
+        let person = {
+            name : "Abid Dhankwala",
+            age : 23,
+            isMarried : false,
+            address : {
+                street : "SV Road",
+                city : "Mumbai",
+                state : "Maharashtra"
+            },//(nesting)object within object
+            subjects : ["maths","science","social-studies"]//array within object
+        };
+
+        console.log(person);
+
+        console.log(person.name);
+
+        console.log(person["age"]);//square operator is used when we used the spaces between the variables like first name
+    
+        console.log(person.address.street);
+
+        console.log(person.subjects);
+        console.log(person.subjects[0]);
+
+        person.name = "Abid";//updates the value
+        console.log(person);
+
+        person["age"] = 30;
+        console.log(person);
+
+        delete person.age;//deletes the value
+        console.log(person);
+
+        person.hasHobbies = false;//adds the value
+        console.log(person);
+    
+        person.greet = function(){
+            console.log(`My name is ${this.name}`);
+        }
+
+        person.greet();
+
+        let person2 = {
+            "first name" : "John",
+            "last name" : "Doe"
+        }
+    
+        console.log(person2["first name"]);
+    
+    </script>
+</body>
+</html>

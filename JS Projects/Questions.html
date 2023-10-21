@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .question-text{
+            display: none;
+        }
+        .plus-btn,.minus-btn{
+            cursor: pointer;
+        }
+        .minus-btn{
+            display: none;
+        }
+        .show-text .question-text{
+            display: block;
+        }
+        .show-text .plus-btn{
+            display: none;
+        }
+        .show-text .minus-btn{
+            display: inline;
+        }
+    </style>
+    
+</head>
+<body>
+    <section class="questions">
+        <div class="title">
+            <h1>General questions</h1>
+        </div>
+
+        <div class="section-center">
+            <article class="question">
+                <div class="question-title">
+                    <span>Do You Aceept All Major Credit Cards?</span>
+                    <span class="plus-btn">+</span>
+                    <span class="minus-btn">-</span>
+                </div>
+                <div class="question-text">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, illo nesciunt sint libero tempore voluptatum voluptatibus assumenda corrupti neque quam.
+                    </p>
+                </div>
+            </article>
+
+            <article class="question">
+                <div class="question-title">
+                    <span>Do You Support Local Farmers?</span>
+                    <span class="plus-btn">+</span>
+                    <span class="minus-btn">-</span>
+                </div>
+                <div class="question-text">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, illo nesciunt sint libero tempore voluptatum voluptatibus assumenda corrupti neque quam.
+                    </p>
+                </div>
+            </article>
+            
+            <article class="question">
+                <div class="question-title">
+                    <span>Do You Use Oraganic Ingredients?</span>
+                    <span class="plus-btn">+</span>
+                    <span class="minus-btn">-</span>
+                </div>
+                <div class="question-text">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, illo nesciunt sint libero tempore voluptatum voluptatibus assumenda corrupti neque quam.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+
+    <script>
+        //traversing the dom
+        let plusBtns = document.querySelectorAll(".plus-btn");
+        let minusBtns = document.querySelectorAll(".minus-btn");
+
+        plusBtns.forEach(function(btn) {
+            btn.addEventListener("click",(e) => {
+                console.log(e.currentTarget.parentElement.parentElement);
+                let item = e.currentTarget.parentElement.parentElement;
+                item.classList.toggle("show-text");
+            });
+        })
+        
+        minusBtns.forEach(function(btn) {
+            btn.addEventListener("click",(e) => {
+                console.log(e.currentTarget.parentElement.parentElement);
+                let item = e.currentTarget.parentElement.parentElement;
+                item.classList.toggle("show-text");
+            });
+        })
+
+        
+    </script>
+</body>
+</html>

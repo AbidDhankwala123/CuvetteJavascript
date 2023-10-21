@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title{
+            /* border: 3px solid red; */
+            display: grid;
+            place-items: center;
+        }
+        .underline{
+            height: 5px;
+            width: 100px;
+            background-color: brown;
+            margin-bottom: 20px;
+        }
+        .button-container{
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .button{
+            cursor: pointer;
+            border: 2px solid brown;
+            padding: 0.3rem 1rem;
+            background: none;
+            border-radius: 5px;
+            color: brown;
+        }
+        .section-center{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            place-items: center;
+        }
+        .menu-item{
+            display: flex;
+            padding-top: 20px;
+        }
+        .item-info{
+            padding-left: 10px;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+        img{
+            height: 150px;
+            width: 150px;
+        }
+        header{
+            display: flex;
+            width: 230px;
+            justify-content: space-between;
+        }
+        p{
+            text-align: justify;
+        }
+        @media screen and (max-width:500px) {
+            .section-center{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="menu">
+        <div class="title">
+            <h2>Our Menu</h2>
+            <div class="underline"></div>
+        </div>
+    
+        <div class="button-container">
+            <button class="button" data-category="all">All</button>
+            <button class="button" data-category="breakfast">Breakfast</button>
+            <button class="button" data-category="lunch">Lunch</button>
+            <button class="button" data-category="shakes">Shakes</button>
+        </div>
+
+        <div class="section-center">
+            <article class="menu-item">
+                <img src="../../../CuvetteHtml/MyImages/star.jpg" class="photo">
+                <div class="item-info">
+                    <header>
+                        <h4>Star Image</h4>
+                        <h4 class="price">$15</h4>
+                    </header>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente blanditiis fuga quae, magni optio unde consectetur enim dicta iure rerum.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+    
+
+    <script>
+        let menu = [
+            {
+                id:1,
+                title: "Color Image",
+                category:"breakfast",
+                price: 15,
+                img:"../../../CuvetteHtml/MyImages/color.jpg",
+                desc : "Lorem ipsum dolor sit amet consectetur adipisicing elit. At odio quo perspiciatis reiciendis nemo eos dolore neque laudantium labore quas."
+            },
+            {
+                id:2,
+                title: "Rose Image",
+                category:"breakfast",
+                price: 15,
+                img:"../../../CuvetteHtml/MyImages/rose.jfif",
+                desc : "Lorem ipsum dolor sit amet consectetur adipisicing elit. At odio quo perspiciatis reiciendis nemo eos dolore neque laudantium labore quas."
+            },
+            {
+                id:3,
+                title: "Star Image",
+                category:"breakfast",
+                price: 15,
+                img:"../../../CuvetteHtml/MyImages/star.jpg",
+                desc : "Lorem ipsum dolor sit amet consectetur adipisicing elit. At odio quo perspiciatis reiciendis nemo eos dolore neque laudantium labore quas."
+            },
+            {
+                id:4,
+                title: "Border Image",
+                category:"breakfast",
+                price: 15,
+                img:"../../../CuvetteHtml/MyImages/border.png",
+                desc : "Lorem ipsum dolor sit amet consectetur adipisicing elit. At odio quo perspiciatis reiciendis nemo eos dolore neque laudantium labore quas."
+            },
+            {
+                id:5,
+                title: "Color Image",
+                category:"lunch",
+                price: 15,
+                img:"../../../CuvetteHtml/MyImages/color.jpg",
+                desc : "Lorem ipsum dolor sit amet consectetur adipisicing elit. At odio quo perspiciatis reiciendis nemo eos dolore neque laudantium labore quas."
+            },
+            {
+                id:6,
+                title: "Rose Image",
+                category:"lunch",
+                price: 15,
+                img:"../../../CuvetteHtml/MyImages/rose.jfif",
+                desc : "Lorem ipsum dolor sit amet consectetur adipisicing elit. At odio quo perspiciatis reiciendis nemo eos dolore neque laudantium labore quas."
+            },
+            {
+                id:7,
+                title: "Star Image",
+                category:"lunch",
+                price: 15,
+                img:"../../../CuvetteHtml/MyImages/star.jpg",
+                desc : "Lorem ipsum dolor sit amet consectetur adipisicing elit. At odio quo perspiciatis reiciendis nemo eos dolore neque laudantium labore quas."
+            },
+            {
+                id:8,
+                title: "Border Image",
+                category:"shakes",
+                price: 15,
+                img:"../../../CuvetteHtml/MyImages/border.png",
+                desc : "Lorem ipsum dolor sit amet consectetur adipisicing elit. At odio quo perspiciatis reiciendis nemo eos dolore neque laudantium labore quas."
+            },
+            {
+                id:9,
+                title: "Color Image",
+                category:"shakes",
+                price: 15,
+                img:"../../../CuvetteHtml/MyImages/color.jpg",
+                desc : "Lorem ipsum dolor sit amet consectetur adipisicing elit. At odio quo perspiciatis reiciendis nemo eos dolore neque laudantium labore quas."
+            },
+        ];
+
+        let sectionCenter = document.querySelector(".section-center");
+
+        window.addEventListener("DOMContentLoaded",() => {
+            displayMenuItems(menu);
+        });
+
+        function displayMenuItems(menuItems){
+            let displayMenu = menuItems.map((item) => {
+                return `<article class="menu-item">
+                <img src="${item.img}" class="photo">
+                <div class="item-info">
+                    <header>
+                        <h4>${item.title}</h4>
+                        <h4 class="price">${item.price}</h4>
+                    </header>
+                    <p>
+                        ${item.desc}
+                    </p>
+                </div>
+            </article>`;
+            });
+
+            displayMenu = displayMenu.join("");
+            sectionCenter.innerHTML = displayMenu;
+        }
+
+        let buttons = document.querySelectorAll(".button");
+
+        buttons.forEach((btn) => {
+            btn.addEventListener("click",(e) => {
+                let category = e.currentTarget.dataset.category;
+
+                let menuCategory = menu.filter(item => {
+                    if(item.category == category)
+                    {
+                        return item;
+                    }
+                });
+
+                if(category == "all")
+                {
+                    displayMenuItems(menu);
+                }
+                else{
+                    displayMenuItems(menuCategory);
+                }
+
+            });
+        });
+    </script>
+</body>
+</html>

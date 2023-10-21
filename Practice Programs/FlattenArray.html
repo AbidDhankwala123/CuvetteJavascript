@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function flattenArray(arrays)
+        {
+            //Solution 1
+            // return arrays.reduce((a,b) => a.concat(b)); // if we want to merge arrays then concat method can be used. Refer Merge2Arrays.html
+
+            //Solution 2
+            // return [].concat.apply([], arrays); // need to study(call(),bind(),apply())
+
+            //Eg of spread operator(...)
+            // function add(a,b,c) {
+            //     return a+b+c;
+            // }
+            // let arr = [1,2,3];
+            // console.log(add(...arr)); //spread operator takes the element one by one 
+
+            //Solution 3
+            // return [].concat(...arrays);
+
+            //Solution 4
+            return arrays.flat();  //Using flat() method, array will be merged
+        }
+        console.log(flattenArray([[1,2],[3,4],[5,6],[7]]));
+    </script>
+</body>
+</html>

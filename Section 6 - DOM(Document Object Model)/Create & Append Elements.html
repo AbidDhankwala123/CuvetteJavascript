@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>Apple</li>
+        <li>Orange</li>
+        <li>Mango</li>
+        <li>Banana</li>
+    </ul>
+    <script>
+
+        let div = document.createElement("div");
+        div.className = "my-element";
+        div.id = "my-element";
+        div.setAttribute("title","My Element");
+        // div.innerText = "Hello World";
+
+        let text = document.createTextNode("Hiii Abid");
+
+        div.appendChild(text);
+
+        document.body.appendChild(div);
+
+        document.querySelector("ul").appendChild(div);
+
+        console.log(div);
+
+
+
+
+
+    </script>
+</body>
+</html>

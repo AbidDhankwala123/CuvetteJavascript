@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isPalindrome(str) {
+            let reverseStr = "";
+            for(let i=str.length-1;i>=0;i--)
+            {
+                reverseStr = reverseStr + str.charAt(i);
+            }
+
+            for(let i=0;i<str.length;i++)
+            {
+                // if(str.charAt(i).toLowerCase() == reverseStr.charAt(i).toLowerCase())
+                // {
+                //     return "it is palindrome";
+                //     // return true;
+                // }
+                // else{
+                //     return "it is not palindrome";
+                //     // return false;
+                // }
+                return str.charAt(i).toLowerCase() == reverseStr.charAt(i).toLowerCase();
+            }
+        }
+        console.log(isPalindrome("Madam"));
+        // console.log(isPalindrome("Abid"));
+
+
+        //Using built-in functions
+        function isPalindrome2(str)
+        {
+            let reverseStr = str.split("").reverse().join("");
+            /*
+            The split('') method converts the string into individual array characters.
+            const arrayValues = string.split(''); // ["h", "e", "l", "l", "o"]
+
+            The reverse() method reverses the position in an array.
+            // ["o", "l", "l", "e", "h"]
+            const reverseArrayValues = arrayValues.reverse();
+
+            The join('') method joins all the elements of an array into a string.
+            const reverseString = reverseArrayValues.join(''); // "olleh"
+            */
+
+            // if(str.toLowerCase() == reverseStr.toLowerCase())
+            // if string is a combination of uppercase and lowercase characters 
+            // then convert it into lowercase or uppercase
+            // {
+            //     return "it is palindrome";
+            // }
+            // else{
+            //     return "it is not palindrome";
+            //}
+
+            return str.toLowerCase() == reverseStr.toLowerCase();
+        }
+        console.log(isPalindrome2("Madam"));
+        // console.log(isPalindrome2("Abid"));
+    </script>
+</body>
+</html>

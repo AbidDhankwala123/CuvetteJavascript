@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #result,#para{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <label for="first-number">First number:</label>
+    <input type="text" id="num1">
+    <label for="second-number">Second number:</label>
+    <input type="text" id="num2"><br><br>
+    <input type="button" value="ADD" onclick="add()">
+    <input type="button" value="SUBTRACT" onclick="subtract()">
+    <input type="button" value="MULTIPLY" onclick="multiply()">
+    <input type="button" value="DIVIDE" onclick="divide()"><br><br>
+    <input type="text" id="result">
+    <p id="para"></p>
+    <script>
+        function add()
+        {
+            let node1=document.getElementById("num1");
+            let node2=document.getElementById("num2");
+            let addition=document.getElementById("result");            
+            let result=parseFloat(node1.value)+parseFloat(node2.value);
+            addition.value=result;
+        }
+        function subtract()
+        {
+            let node1=document.getElementById("num1");
+            let node2=document.getElementById("num2");
+            let subtraction=document.getElementById("result");
+            let result=parseFloat(node1.value)-parseFloat(node2.value);
+            subtraction.value=result;
+        }
+        function multiply()
+        {
+            let node1=document.getElementById("num1");
+            let node2=document.getElementById("num2");
+            let multiplication=document.getElementById("result");
+            let result=parseFloat(node1.value)*parseFloat(node2.value);
+            multiplication.value=result;
+            
+        }
+        function divide()
+        {
+            let node1=document.getElementById("num1");
+            let node2=document.getElementById("num2");
+            let division=document.getElementById("para");
+            if(node2.value==0){
+                // division.innerText = `division by zero is not allowed`;
+                alert(`division by zero is not allowed`);
+            }
+            else{
+                let result=parseFloat(node1.value)/parseFloat(node2.value);
+                division.innerText=result;
+            }
+            
+        }   
+    </script>
+</body>
+</html>
