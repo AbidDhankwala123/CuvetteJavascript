@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Shopping list</h1>
+    <form id="item-form">
+        <input type="text" id="item-input" placeholder="Enter text">
+
+        <select name="priority" id="priority-input">
+            <option value="0">Select an priority</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+
+        <input type="submit" value="Submit" id="submit">
+    </form>
+    
+    <script>
+        let submit = document.getElementById("submit");
+
+        function onSubmit(e){
+            e.preventDefault();
+            // console.log("submit");
+            let item = document.getElementById("item-input").value;
+            let priority = document.getElementById("priority-input");
+
+            console.log(item,priority.value);
+        }
+
+        submit.addEventListener("submit",onSubmit);
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1st way -->
+    <!-- <button onclick="clicked()">Run</button> -->
+
+    <!-- Other ways -->
+    <button id="button">Run</button>
+
+    <ul>
+        <li>Apple</li>
+        <li>Orange</li>
+        <li>Mango</li>
+        <li>Banana</li>
+    </ul>
+
+    <button id="clear-btn">Clear Items</button>
+
+    <script>
+        // 1st way
+        function clicked() {
+            alert("This is a clicked button");
+        }
+
+        //2nd way
+        //JavaScript Event Listener
+        let button = document.querySelector("#button");
+        button.onclick = function () {
+            alert("This is a new clicked button");
+        }
+        button.onclick = function () {
+            console.log("This is a console.log using onclick() function")
+
+        }
+
+        //addEventListener()
+        button.addEventListener("click",function () {
+            alert("This is a new clicked button using addEventListener()");
+        })
+
+        //Shorten the above using arrow function
+        button.addEventListener("click",() =>
+            alert("This is a new clicked button using addEventListener() and arrow function"));
+        
+        button.addEventListener("click", () => 
+            console.log("This is a console.log using addEventListener()")
+        );
+        //using addEventListener, we can do alert and console.log both
+        //but using, onclick() function,if we try to do both ,alert and console.log ,then only console.log will be done but not alert
+    
+        
+        button.addEventListener("click", clicked);
+
+        // setTimeout(() => button.removeEventListener("click",clicked),5000);
+
+        // setTimeout(() => button.click(),5000);
+    
+    
+        function onClear() {
+            let itemList = document.querySelector("ul");
+            let items = itemList.querySelectorAll("li");
+
+            //1st way
+            // itemList.innerHTML="";
+
+            //2nd way
+            // items.forEach(item => item.remove());
+
+            //3rd way
+            while (itemList.firstChild) {
+                itemList.removeChild(itemList.firstChild);
+            }
+        }
+
+        let clearButton = document.querySelector("#clear-btn");
+        clearButton.addEventListener("click",onClear);
+    </script>
+</body>
+</html>

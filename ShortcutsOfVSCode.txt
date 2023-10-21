@@ -1,0 +1,9 @@
+1. shift + right/left/down/up arrow -> used to select the text.(use this)
+        2. shift + alt + right/left arrow -> used to select the text faster.
+        3. shift + alt + up/down arrow -> used to copy the text up/down way.(use this)
+    4. ctrl + left/right arrow -> used to go at beginnning or end of the text faster.
+    5. alt + up/dowm arrow -> used to move the whole text anywhere(use this)
+(use this) 6. after selecting a text like log,use ctrl+D -> to select the other log text also 
+(use this) 7. ctrl+shift+L -> instead of selecting one by one text using ctrl+D,we can use ctrl+shift+L to select all texts simultaneously
+(use this) 8. alt + (mouse left)click -> first click at the beginning/anywhere of the text and 
+    then press alt+click at beginning/anywhere to select the same text and type anything

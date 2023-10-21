@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>Apple</li>
+        <li>Orange</li>
+        <li>Mango</li>
+        <li>Banana</li>
+    </ul>
+
+    <button>Clear</button>
+
+    <script>
+        // Refer Remove Elements.html
+        let itemList =document.querySelector("ul");
+        let items=itemList.querySelectorAll("li");
+        console.log(itemList);
+        console.log(items);//NodeList similar to array
+        let button = document.querySelector("button");
+        
+
+        // console.log(itemList.firstElementChild);
+        function deleteItem()
+        {
+            //1st way
+            // itemList.children[0].remove();
+
+            //2nd way
+            // itemList.removeChild(itemList.firstElementChild);
+
+            //3rd way //This way is much better
+            let ul = document.querySelector("ul");
+            let li = document.querySelector("li:first-child");
+
+            ul.removeChild(li);
+        }
+
+        button.addEventListener("click",deleteItem);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+        <div id="div">
+            <button id="button">Click</button>
+        </div>
+    </form>
+
+    <script>
+        //Event bubbling => up
+        //Event trickling/capturing => down
+        let button = document.querySelector("button");
+        let div = document.querySelector("div");
+        let form = document.querySelector("form");
+
+
+        button.addEventListener("click",() => {
+            alert("button was clicked");
+        },false);//by default, it is false and setting true means event capturing that is from parent to child
+
+        div.addEventListener("click",(e) => {
+            alert("div was clicked");
+            // e.stopPropagation();
+        },true);
+
+        form.addEventListener("click",() => {
+            alert("form was clicked");
+        },false);
+
+        document.body.addEventListener("click",() => {
+            alert("body was clicked");
+        },true);
+        //if true and false both mentioned, then,first capture will done then bubble(body Capture,div Capture,button bubble,from bubble)
+    </script>
+</body>
+</html>

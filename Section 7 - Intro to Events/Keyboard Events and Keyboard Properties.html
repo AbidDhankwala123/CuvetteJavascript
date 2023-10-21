@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="item-input" placeholder="Enter text">
+
+    <script>
+        let itemInput = document.getElementById("item-input");
+
+        function onKeyPress(e) {
+            console.log("keypress");
+            // alert("keypress");
+        }
+        
+        function onKeyUp(e) {
+            console.log("keyup");
+        } 
+
+        function onKeyDown(e) {
+            // console.log("keydown");
+            // alert("keydown");
+
+
+            //key
+            // console.log(e.key);
+            if(e.key == "Enter"){
+                alert("You pressed Enter");
+            }
+
+
+            //keyCode
+            // console.log(e.keyCode);
+            if(e.keyCode == 13){
+                alert("You pressed Enter");
+            }
+
+
+            //code
+            // console.log(e.code);
+
+
+            if(e.repeat){ //returns true or false
+                // console.log("You are holding down "+e.key);//if we are holding any key then we can see the output
+            }
+
+            console.log("Shift: "+e.shiftKey);
+            console.log("Control: "+e.ctrlKey);
+            console.log("Alt: "+e.altKey);
+
+            if(e.shiftKey && e.key == "K")
+            {
+                console.log("You pressed shift + K");
+            }
+        } 
+
+        // itemInput.addEventListener("keypress",onKeyPress);
+        // itemInput.addEventListener("keyup",onKeyUp);
+        itemInput.addEventListener("keydown",onKeyDown);//recommended to use this bcoz keypress doesn't work for some keys
+    
+        
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>

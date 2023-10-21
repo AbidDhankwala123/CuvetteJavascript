@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="insert">
+        Press any key to get the keycode
+    </div>
+    <script>
+        //Method 1
+        // window.addEventListener("keydown",(e) => {
+        //     let insert = document.getElementById("insert");
+
+        //     insert.innerHTML = `
+        //     <div class="key">
+        //         ${e.key == " " ? "Space" : e.key}
+        //         <small>e.key</small>
+        //     </div>
+        //     <div class="key">
+        //         ${e.keyCode}
+        //         <small>e.keyCode</small>
+        //     </div>
+        //     <div class="key">
+        //         ${e.code}
+        //         <small>e.code</small>
+        //     </div>`    
+        //})
+
+
+        //Method 2
+        function showKeyCodes(e) {
+            let insert = document.getElementById("insert");
+            let keyCodes = {
+                "e.key" : e.key == " " ? "Space" : e.key,
+                "e.keyCode" : e.keyCode,
+                "e.code" : e.code
+            };
+
+            // console.log(keyCodes);
+            for(let key in keyCodes)
+            {
+                console.log(key+" => "+keyCodes[key]);
+            }
+        }
+        window.addEventListener("keydown",showKeyCodes);
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="../../../NewPracticeCSSForCuvette/MyImages/star.jpg">
+    
+    <ul>
+        <li>Apple</li>
+        <li>Orange</li>
+        <li>Mango</li>
+        <li>Banana</li>
+    </ul>
+
+    <script>
+        let img = document.querySelector("img");
+        
+        let doStuffOnClick = () => console.log("clicked event");
+        // let doStuffOnDoubleClick = () => console.log("double click event");
+        
+        let doStuffOnDoubleClick = () => {
+            // document.body.style.backgroundColor = "purple";
+            if(document.body.style.backgroundColor != "purple")//working like toggle,check by double clicking
+            {
+                document.body.style.backgroundColor = "purple";
+                document.body.style.color = "white";
+            }
+            else{
+                document.body.style.backgroundColor = "white";
+                document.body.style.color = "purple";
+            }
+        };
+
+        let doStuffOnRightClick = () => console.log("right click event");
+        let doStuffOnMouseDown = () => console.log("mouse down event");
+        let doStuffOnMouseUp = () => console.log("mouse up event");
+        let doStuffOnMouseWheel = () => console.log("mouse wheel event");
+        let doStuffOnMouseOver = () => console.log("mouse over event");
+        let doStuffOnMouseOut = () => console.log("mouse out event");
+        let doStuffOnDrag = () => console.log("drag event");
+        let doStuffOnDragStart = () => console.log("drag start event");
+        let doStuffOnDragEnd = () => console.log("drag end event");
+
+
+
+
+
+
+
+        //Event Listeners
+        //1st parameter is for event operation and 2nd parameter is the name of the method that we are creating above
+        img.addEventListener("click",doStuffOnClick);
+        img.addEventListener("dblclick",doStuffOnDoubleClick);
+        img.addEventListener("contextmenu",doStuffOnRightClick);
+        img.addEventListener("mousedown",doStuffOnMouseDown);//mousedown means just clicked the mouse and hold
+        img.addEventListener("mouseup",doStuffOnMouseUp);//mouseup means after holding, leave the mouse
+        img.addEventListener("wheel",doStuffOnMouseWheel);
+        img.addEventListener("mouseover",doStuffOnMouseOver);//mouseover and mouseout means hover
+        img.addEventListener("mouseout",doStuffOnMouseOut);
+        img.addEventListener("drag",doStuffOnDrag);
+        img.addEventListener("dragstart",doStuffOnDragStart);
+        img.addEventListener("dragend",doStuffOnDragEnd);
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Click</button>
+
+    <a href="https://cuvette.tech">Cuvette tech</a>
+
+    <script>
+        let a = document.querySelector("a");
+        let button = document.querySelector("button");
+
+        function clicked(e)
+        {
+            console.log(e);
+            console.log(e.target);
+            console.log(e.currentTarget);
+            e.target.style.backgroundColor = "red";
+            e.target.style.color = "white";
+
+            console.log(e.type);//type is click event
+            console.log(e.timeStamp);
+
+            console.log(e.clientX);//from right to left(width)
+            console.log(e.clientY);//from top to bottom(height)
+
+            console.log(e.offsetX);//from right to left(width)(within the element (button))
+            console.log(e.offsetY);//from top to bottom(height)(within the element (button))
+
+            console.log(e.pageX);
+            console.log(e.pageY);
+
+            console.log(e.screenX);
+            console.log(e.screenY);
+            
+
+        }
+        button.addEventListener("click",clicked);
+
+        
+        function dragged(e){
+            button.textContent = `X ${e.clientX} Y ${e.clientY}`;
+        }
+        
+        a.addEventListener("drag",dragged);
+
+
+        // document.body.addEventListener("click",function (e) {
+        //     console.log(e.target); // this will give the target element that we had clicked on
+        //     console.log(e.currentTarget); //this will give the whole body element as we had use document.body and button is nested in body
+        // })
+
+        document.querySelector("a").addEventListener("click",function(e){
+            e.preventDefault();
+
+            console.log("Link was clicked");
+        });
+    </script>
+</body>
+</html>

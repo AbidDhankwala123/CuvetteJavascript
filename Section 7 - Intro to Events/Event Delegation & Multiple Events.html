@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>Apple</li>
+        <li>Orange</li>
+        <li>Mango</li>
+        <li>Banana</li>
+    </ul>
+
+    <script>
+        let items = document.querySelectorAll("li");
+        let itemList = document.querySelector("ul");
+
+        // items.forEach(item => {
+        //     item.addEventListener("click",(e) => {
+        //         e.target.remove();
+        //     });
+        // });
+
+        //Event delegation - instead of selectiong all items, select only one element that is parent
+        itemList.addEventListener("click",(e) => {
+            // console.log(e.target);
+            if(e.target.tagName == "LI")//write in uppercase 
+            {
+                e.target.remove();
+            }
+        })
+
+        itemList.addEventListener("mouseover",(e) => {
+            if(e.target.tagName == "LI")//write in uppercase 
+            {
+                e.target.style.color = "blue";
+            }
+        })
+    </script>
+</body>
+</html>
